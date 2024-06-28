@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ipvhp82hema"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ty8sl"]
+
+[sub_resource type="Gradient" id="Gradient_5j4ol"]
+offsets = PackedFloat32Array(0, 0.103226, 0.264516, 0.445161, 0.683871, 0.806452, 1)
+colors = PackedColorArray(0, 0.458824, 0.784314, 0.67451, 0.0705882, 0.329412, 0.917647, 0.780392, 0.184314, 0.360784, 0.858824, 0.776471, 0.266667, 0.415686, 0.827451, 0.862745, 0.121569, 0.501961, 0.984314, 0.780392, 0.352941, 0.352941, 0.952941, 1, 0.290196, 0.988235, 0.811765, 0.67451)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ud143"]
+gradient = SubResource("Gradient_5j4ol")
+fill_from = Vector2(0.100917, 0.93578)
+
+[node name="World" type="Node2D"]
+material = SubResource("ShaderMaterial_ty8sl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 1159.0
+offset_bottom = 653.0
+texture = SubResource("GradientTexture2D_ud143")
