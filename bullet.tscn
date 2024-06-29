@@ -1,17 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc8b8g82r8qub"]
+[gd_scene load_steps=5 format=3 uid="uid://cc8b8g82r8qub"]
+
+[ext_resource type="Script" path="res://Bullet.gd" id="1_vytlf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t56tg"]
 size = Vector2(2, 2)
 
 [sub_resource type="Gradient" id="Gradient_gt3pb"]
 offsets = PackedFloat32Array(0, 0.524476, 1)
-colors = PackedColorArray(0.992157, 0.627451, 0.803922, 1, 0.392157, 0.403922, 0.337255, 0.764706, 0.188235, 0.172549, 0.584314, 1)
+colors = PackedColorArray(0.992157, 0.627451, 0.803922, 1, 1, 1, 0.337255, 1, 0.188235, 0.172549, 0.584314, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1edqa"]
 gradient = SubResource("Gradient_gt3pb")
 fill_from = Vector2(0.145631, 0.902913)
 
 [node name="Bullet" type="Area2D"]
+script = ExtResource("1_vytlf")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
