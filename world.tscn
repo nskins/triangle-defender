@@ -44,3 +44,12 @@ polygon = PackedVector2Array(15, -1.009, 30, 10.0901, 15, 21)
 position = Vector2(-21, -10)
 texture = SubResource("GradientTexture2D_8wbqi")
 polygon = PackedVector2Array(15, -1, 30, 10, 15, 21)
+
+[node name="Muzzle" type="Marker2D" parent="Triangle"]
+position = Vector2(10, 0)
+
+[node name="ShootTimer" type="Timer" parent="Triangle"]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Triangle/ShootTimer" to="Triangle" method="_on_shoot_timer_timeout"]
