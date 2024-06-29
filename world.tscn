@@ -18,7 +18,7 @@ colors = PackedColorArray(0.8, 0.0823529, 0.360784, 1, 0.909804, 0.635294, 0.321
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8wbqi"]
 gradient = SubResource("Gradient_8sucy")
-fill_from = Vector2(0.213592, 0.912621)
+fill_from = Vector2(0.242718, 0.786408)
 
 [node name="World" type="Node2D"]
 material = SubResource("ShaderMaterial_ty8sl")
@@ -32,16 +32,15 @@ texture = SubResource("GradientTexture2D_ud143")
 
 [node name="Triangle" type="Area2D" parent="."]
 z_index = 1
-position = Vector2(545, 307)
+position = Vector2(541, 306)
 script = ExtResource("1_vik46")
-metadata/_edit_group_ = true
 
 [node name="Collision" type="CollisionPolygon2D" parent="Triangle"]
-position = Vector2(-15, -8)
+position = Vector2(-21, -10)
 scale = Vector2(1, 0.991071)
-polygon = PackedVector2Array(0, 0, 30, 0, 15, 21)
+polygon = PackedVector2Array(15, -1.009, 30, 10.0901, 15, 21)
 
 [node name="Texture" type="Polygon2D" parent="Triangle"]
-position = Vector2(-15, -8)
+position = Vector2(-21, -10)
 texture = SubResource("GradientTexture2D_8wbqi")
-polygon = PackedVector2Array(0, 0, 30, 0, 15, 21)
+polygon = PackedVector2Array(15, -1, 30, 10, 15, 21)
