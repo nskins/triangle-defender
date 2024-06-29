@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8ipvhp82hema"]
+[gd_scene load_steps=7 format=3 uid="uid://c8ipvhp82hema"]
+
+[ext_resource type="Script" path="res://Triangle.gd" id="1_vik46"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ty8sl"]
 
@@ -22,20 +24,24 @@ fill_from = Vector2(0.213592, 0.912621)
 material = SubResource("ShaderMaterial_ty8sl")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -4.0
-offset_top = -3.0
-offset_right = 1159.0
-offset_bottom = 653.0
+offset_left = -5.0
+offset_top = -2.0
+offset_right = 1158.0
+offset_bottom = 654.0
 texture = SubResource("GradientTexture2D_ud143")
 
 [node name="Triangle" type="Area2D" parent="."]
 z_index = 1
+position = Vector2(545, 307)
+script = ExtResource("1_vik46")
+metadata/_edit_group_ = true
 
 [node name="Collision" type="CollisionPolygon2D" parent="Triangle"]
-position = Vector2(561, 301.244)
+position = Vector2(-15, -8)
 scale = Vector2(1, 0.991071)
-polygon = PackedVector2Array(0, -0.245941, 30, -0.245941, 15, 21)
+polygon = PackedVector2Array(0, 0, 30, 0, 15, 21)
 
 [node name="Texture" type="Polygon2D" parent="Triangle"]
+position = Vector2(-15, -8)
 texture = SubResource("GradientTexture2D_8wbqi")
-polygon = PackedVector2Array(576, 322, 591, 301, 561, 301)
+polygon = PackedVector2Array(0, 0, 30, 0, 15, 21)
