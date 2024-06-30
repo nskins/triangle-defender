@@ -9,6 +9,7 @@ func _on_mob_timer_timeout():
 	
 	var side = randi() % 4
 	
+	# TODO: there's probably a cleaner way to write this.
 	match side:
 		0:
 			x = randi() % x

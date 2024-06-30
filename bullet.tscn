@@ -24,3 +24,5 @@ shape = SubResource("RectangleShape2D_t56tg")
 position = Vector2(-1, -1)
 texture = SubResource("GradientTexture2D_1edqa")
 polygon = PackedVector2Array(0, 0, 2, 0, 2, 2, 0, 2)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

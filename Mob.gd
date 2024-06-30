@@ -6,6 +6,9 @@ var speed = 100
 #       current position of the Triangle instead of hardcoding.
 var destination = Vector2(577, 324)
 
+func _ready():
+	add_to_group("mobs")
+
 func _physics_process(delta):
 	look_at(destination)
 	
