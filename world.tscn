@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8ipvhp82hema"]
+[gd_scene load_steps=8 format=3 uid="uid://c8ipvhp82hema"]
 
 [ext_resource type="Script" path="res://Triangle.gd" id="1_vik46"]
+[ext_resource type="PackedScene" uid="uid://cf6jtkwfwesoi" path="res://mob.tscn" id="2_47xi7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ty8sl"]
 
@@ -51,5 +52,8 @@ position = Vector2(10, 0)
 [node name="ShootTimer" type="Timer" parent="Triangle"]
 wait_time = 0.5
 autostart = true
+
+[node name="Mob" parent="." instance=ExtResource("2_47xi7")]
+position = Vector2(1080, 214)
 
 [connection signal="timeout" from="Triangle/ShootTimer" to="Triangle" method="_on_shoot_timer_timeout"]
