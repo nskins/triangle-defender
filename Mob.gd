@@ -1,5 +1,7 @@
 extends Area2D
 
+signal squashed
+
 var speed = 100
 
 # TODO: it would be better to get these numbers from the
@@ -15,3 +17,7 @@ func _physics_process(delta):
 	var normalized_destination = destination.normalized()
 	
 	position += transform.x * speed * delta
+
+func squash():
+	squashed.emit()
+	queue_free()

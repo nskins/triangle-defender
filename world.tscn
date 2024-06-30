@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8ipvhp82hema"]
+[gd_scene load_steps=9 format=3 uid="uid://c8ipvhp82hema"]
 
 [ext_resource type="Script" path="res://Triangle.gd" id="1_vik46"]
 [ext_resource type="Script" path="res://World.gd" id="1_yef18"]
+[ext_resource type="Script" path="res://Score.gd" id="2_nat7l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ty8sl"]
 
@@ -45,6 +46,7 @@ grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 32
 text = "0"
 text_direction = 2
+script = ExtResource("2_nat7l")
 
 [node name="Triangle" type="Area2D" parent="."]
 z_index = 1

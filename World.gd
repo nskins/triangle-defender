@@ -26,3 +26,5 @@ func _on_mob_timer_timeout():
 	add_child(mob)
 	mob.position.x = x
 	mob.position.y = y
+	
+	mob.squashed.connect($Background/Score._on_mob_squashed.bind())
