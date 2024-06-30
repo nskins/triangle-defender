@@ -57,5 +57,6 @@ autostart = true
 [node name="MobTimer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="area_entered" from="Triangle" to="Triangle" method="_on_area_entered"]
 [connection signal="timeout" from="Triangle/ShootTimer" to="Triangle" method="_on_shoot_timer_timeout"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

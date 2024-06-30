@@ -12,3 +12,8 @@ func shoot():
 	var b = Bullet.instantiate()
 	owner.add_child(b)
 	b.transform = $Muzzle.global_transform
+
+func _on_area_entered(area):
+	if area.is_in_group("mobs"):
+		# TODO: Game over logic.
+		queue_free()
