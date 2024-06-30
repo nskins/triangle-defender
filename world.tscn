@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c8ipvhp82hema"]
 
 [ext_resource type="Script" path="res://Triangle.gd" id="1_vik46"]
-[ext_resource type="PackedScene" uid="uid://cf6jtkwfwesoi" path="res://mob.tscn" id="2_47xi7"]
+[ext_resource type="Script" path="res://World.gd" id="1_yef18"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ty8sl"]
 
@@ -23,6 +23,7 @@ fill_from = Vector2(0.242718, 0.786408)
 
 [node name="World" type="Node2D"]
 material = SubResource("ShaderMaterial_ty8sl")
+script = ExtResource("1_yef18")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -5.0
@@ -53,7 +54,8 @@ position = Vector2(10, 0)
 wait_time = 0.5
 autostart = true
 
-[node name="Mob" parent="." instance=ExtResource("2_47xi7")]
-position = Vector2(1080, 214)
+[node name="MobTimer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="timeout" from="Triangle/ShootTimer" to="Triangle" method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
