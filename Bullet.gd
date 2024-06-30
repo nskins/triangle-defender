@@ -10,3 +10,6 @@ func _on_area_entered(area):
 	if area.is_in_group("mobs"):
 		area.queue_free()
 	queue_free()
+
+# TODO: we need to free the memory when the bullet
+#       hits the edge of the screen.
