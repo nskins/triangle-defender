@@ -10,5 +10,7 @@ func _on_area_entered(area):
 		area.squash()
 	queue_free()
 
-# TODO: we need to free the memory when the bullet
-#       hits the edge of the screen.
+# Free up memory when the bullet hits the edge of the screen.
+# The amount of time to exit the viewport is estimated with a timer.
+func _on_timer_timeout() -> void:
+	queue_free()

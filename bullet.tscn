@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc8b8g82r8qub"]
+[gd_scene format=3 uid="uid://cc8b8g82r8qub"]
 
-[ext_resource type="Script" path="res://Bullet.gd" id="1_vytlf"]
+[ext_resource type="Script" uid="uid://cfdqt1crc08sj" path="res://Bullet.gd" id="1_vytlf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t56tg"]
 size = Vector2(2, 2)
@@ -13,16 +13,22 @@ colors = PackedColorArray(0.992157, 0.627451, 0.803922, 1, 1, 1, 0.337255, 1, 0.
 gradient = SubResource("Gradient_gt3pb")
 fill_from = Vector2(0.145631, 0.902913)
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" unique_id=404080270]
 script = ExtResource("1_vytlf")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1914590458]
 shape = SubResource("RectangleShape2D_t56tg")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1012579205]
 position = Vector2(-1, -1)
 texture = SubResource("GradientTexture2D_1edqa")
 polygon = PackedVector2Array(0, 0, 2, 0, 2, 2, 0, 2)
 
+[node name="Timer" type="Timer" parent="." unique_id=1375808394]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
