@@ -74,7 +74,7 @@ autostart = true
 [node name="MobTimer" type="Timer" parent="." unique_id=1337054468]
 autostart = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1412207658]
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1412207658]
 stream = ExtResource("4_aqk2v")
 volume_db = 8.889
 autoplay = true
