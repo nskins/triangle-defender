@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8ipvhp82hema"]
+[gd_scene format=3 uid="uid://c8ipvhp82hema"]
 
-[ext_resource type="Script" path="res://Triangle.gd" id="1_vik46"]
-[ext_resource type="Script" path="res://World.gd" id="1_yef18"]
-[ext_resource type="Script" path="res://Score.gd" id="2_nat7l"]
+[ext_resource type="Script" uid="uid://76dgoxt02i0i" path="res://Triangle.gd" id="1_vik46"]
+[ext_resource type="Script" uid="uid://c3mid8bsqrj38" path="res://World.gd" id="1_yef18"]
+[ext_resource type="Script" uid="uid://dm8e2m2iipxyi" path="res://Score.gd" id="2_nat7l"]
+[ext_resource type="AudioStream" uid="uid://bewyfaqlei8di" path="res://triangle-defender.wav" id="4_aqk2v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ty8sl"]
 
@@ -22,16 +23,16 @@ colors = PackedColorArray(0.8, 0.0823529, 0.360784, 1, 0.909804, 0.635294, 0.321
 gradient = SubResource("Gradient_8sucy")
 fill_from = Vector2(0.242718, 0.786408)
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" unique_id=860740691]
 material = SubResource("ShaderMaterial_ty8sl")
 script = ExtResource("1_yef18")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1981396973]
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = SubResource("GradientTexture2D_ud143")
 
-[node name="Score" type="RichTextLabel" parent="Background"]
+[node name="Score" type="RichTextLabel" parent="Background" unique_id=108413318]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -48,30 +49,35 @@ text = "0"
 text_direction = 2
 script = ExtResource("2_nat7l")
 
-[node name="Triangle" type="Area2D" parent="."]
+[node name="Triangle" type="Area2D" parent="." unique_id=1102859971]
 z_index = 1
 position = Vector2(577, 324)
 script = ExtResource("1_vik46")
 
-[node name="Collision" type="CollisionPolygon2D" parent="Triangle"]
+[node name="Collision" type="CollisionPolygon2D" parent="Triangle" unique_id=850697636]
 position = Vector2(-21, -10)
 scale = Vector2(1, 0.991071)
 polygon = PackedVector2Array(15, -1.009, 30, 10.0901, 15, 21)
 
-[node name="Texture" type="Polygon2D" parent="Triangle"]
+[node name="Texture" type="Polygon2D" parent="Triangle" unique_id=1471493340]
 position = Vector2(-21, -10)
 texture = SubResource("GradientTexture2D_8wbqi")
 polygon = PackedVector2Array(15, -1, 30, 10, 15, 21)
 
-[node name="Muzzle" type="Marker2D" parent="Triangle"]
+[node name="Muzzle" type="Marker2D" parent="Triangle" unique_id=1076292540]
 position = Vector2(10, 0)
 
-[node name="ShootTimer" type="Timer" parent="Triangle"]
+[node name="ShootTimer" type="Timer" parent="Triangle" unique_id=1291983448]
 wait_time = 0.5
 autostart = true
 
-[node name="MobTimer" type="Timer" parent="."]
+[node name="MobTimer" type="Timer" parent="." unique_id=1337054468]
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1412207658]
+stream = ExtResource("4_aqk2v")
+volume_db = 8.889
+autoplay = true
 
 [connection signal="area_entered" from="Triangle" to="Triangle" method="_on_area_entered"]
 [connection signal="timeout" from="Triangle/ShootTimer" to="Triangle" method="_on_shoot_timer_timeout"]
