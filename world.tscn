@@ -33,6 +33,7 @@ offset_bottom = 648.0
 texture = SubResource("GradientTexture2D_ud143")
 
 [node name="Score" type="RichTextLabel" parent="Background" unique_id=108413318]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -50,6 +51,7 @@ text_direction = 2
 script = ExtResource("2_nat7l")
 
 [node name="Triangle" type="Area2D" parent="." unique_id=1102859971]
+visible = false
 z_index = 1
 position = Vector2(577, 324)
 script = ExtResource("1_vik46")
@@ -69,16 +71,55 @@ position = Vector2(10, 0)
 
 [node name="ShootTimer" type="Timer" parent="Triangle" unique_id=1291983448]
 wait_time = 0.5
-autostart = true
 
 [node name="MobTimer" type="Timer" parent="." unique_id=1337054468]
-autostart = true
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1412207658]
 stream = ExtResource("4_aqk2v")
 volume_db = 8.889
-autoplay = true
+
+[node name="DifficultyContainer" type="BoxContainer" parent="." unique_id=2068090250]
+offset_right = 1153.0
+offset_bottom = 648.0
+alignment = 1
+vertical = true
+
+[node name="Prompt" type="Label" parent="DifficultyContainer" unique_id=565906911]
+layout_mode = 2
+text = "Choose a difficulty:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyBox" type="BoxContainer" parent="DifficultyContainer" unique_id=1149665031]
+layout_mode = 2
+alignment = 1
+
+[node name="EasyButton" type="Button" parent="DifficultyContainer/EasyBox" unique_id=1151439924]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Easy"
+
+[node name="MediumBox" type="BoxContainer" parent="DifficultyContainer" unique_id=1787922415]
+layout_mode = 2
+alignment = 1
+
+[node name="MediumButton" type="Button" parent="DifficultyContainer/MediumBox" unique_id=1748546485]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Medium"
+
+[node name="HardBox" type="BoxContainer" parent="DifficultyContainer" unique_id=357449812]
+layout_mode = 2
+alignment = 1
+
+[node name="HardButton" type="Button" parent="DifficultyContainer/HardBox" unique_id=808683845]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Hard"
 
 [connection signal="area_entered" from="Triangle" to="Triangle" method="_on_area_entered"]
 [connection signal="timeout" from="Triangle/ShootTimer" to="Triangle" method="_on_shoot_timer_timeout"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="pressed" from="DifficultyContainer/EasyBox/EasyButton" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="DifficultyContainer/MediumBox/MediumButton" to="." method="_on_medium_button_pressed"]
+[connection signal="pressed" from="DifficultyContainer/HardBox/HardButton" to="." method="_on_hard_button_pressed"]

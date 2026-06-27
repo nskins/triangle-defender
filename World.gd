@@ -28,3 +28,26 @@ func _on_mob_timer_timeout():
 	mob.position.y = y
 	
 	mob.squashed.connect($Background/Score._on_mob_squashed.bind())
+
+func startGame() -> void:
+	$MobTimer.start()
+	$Triangle/ShootTimer.start()
+	$Triangle.visible = true
+	$DifficultyContainer.visible = false
+	$Background/Score.visible = true
+	$BGM.play()
+
+func _on_easy_button_pressed() -> void:
+	$Triangle/ShootTimer.wait_time = 0.25
+	$MobTimer.wait_time = 1.00
+	startGame()
+
+func _on_medium_button_pressed() -> void:
+	$Triangle/ShootTimer.wait_time = 0.50
+	$MobTimer.wait_time = 1.00
+	startGame()
+
+func _on_hard_button_pressed() -> void:
+	$Triangle/ShootTimer.wait_time = 0.50
+	$MobTimer.wait_time = 0.75
+	startGame()
