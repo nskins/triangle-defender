@@ -1,18 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf6jtkwfwesoi"]
+[gd_scene format=3 uid="uid://cf6jtkwfwesoi"]
 
-[ext_resource type="Script" path="res://Mob.gd" id="1_3acxy"]
+[ext_resource type="Script" uid="uid://bsyi8k2mqj1ts" path="res://Mob.gd" id="1_3acxy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vn0lo"]
 size = Vector2(16, 16)
 
-[node name="Mob" type="Area2D"]
+[node name="Mob" type="Area2D" unique_id=1240049972]
 script = ExtResource("1_3acxy")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1460089521]
 shape = SubResource("RectangleShape2D_vn0lo")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=133073849]
 position = Vector2(-8, -8)
 color = Color(0.65098, 0.239216, 0.168627, 1)
 polygon = PackedVector2Array(0, 0, 0, 16, 16, 16, 16, 0)

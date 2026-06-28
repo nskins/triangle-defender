@@ -1,5 +1,7 @@
 extends Area2D
 
+signal game_over
+
 @export var Bullet : PackedScene = load("res://bullet.tscn")
 
 func _process(delta):
@@ -15,5 +17,4 @@ func shoot():
 
 func _on_area_entered(area):
 	if area.is_in_group("mobs"):
-		# TODO: Game over logic.
-		queue_free()
+		emit_signal("game_over")

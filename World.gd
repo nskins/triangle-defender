@@ -2,6 +2,10 @@ extends Node2D
 
 @export var Mob : PackedScene = load("res://mob.tscn")
 
+func _ready():
+	var triangle = get_node("Triangle")
+	triangle.game_over.connect(_on_game_over)
+
 func _on_mob_timer_timeout():
 	# TODO: we should get these values programmatically.
 	var x: int = 577 * 2
@@ -52,10 +56,19 @@ func _on_hard_button_pressed() -> void:
 	$MobTimer.wait_time = 0.75
 	startGame()
 
-
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
 
-
 func _on_try_again_button_pressed() -> void:
-	pass # Replace with function body.
+	$DifficultyContainer.visible = true
+	$Background/Score.update_score(0)
+	$Background/Score.visible = false
+	$GameOverContainer.visible = false
+
+func _on_game_over():
+	$MobTimer.stop()
+	$Triangle/ShootTimer.stop()
+	$Triangle.visible = false
+	$GameOverContainer.visible = true
+	$BGM.stop()
+	get_tree().call_group("mobs", "queue_free")

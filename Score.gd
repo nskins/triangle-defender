@@ -2,6 +2,9 @@ extends RichTextLabel
 
 var score = 0
 
-func _on_mob_squashed():
-	score += 1
+func update_score(value):
+	score = value
 	text = "%s" % score
+
+func _on_mob_squashed():
+	update_score(score + 1)
