@@ -51,3 +51,11 @@ func _on_hard_button_pressed() -> void:
 	$Triangle/ShootTimer.wait_time = 0.50
 	$MobTimer.wait_time = 0.75
 	startGame()
+
+
+func _on_exit_button_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_try_again_button_pressed() -> void:
+	pass # Replace with function body.

@@ -117,9 +117,40 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Hard"
 
+[node name="GameOverContainer" type="BoxContainer" parent="." unique_id=1365431094]
+offset_right = 1153.0
+offset_bottom = 648.0
+alignment = 1
+vertical = true
+
+[node name="Prompt" type="Label" parent="GameOverContainer" unique_id=353453981]
+layout_mode = 2
+text = "Game over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TryAgainBox" type="BoxContainer" parent="GameOverContainer" unique_id=568203917]
+layout_mode = 2
+alignment = 1
+
+[node name="TryAgainButton" type="Button" parent="GameOverContainer/TryAgainBox" unique_id=1483805163]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Try again"
+
+[node name="ExitBox" type="BoxContainer" parent="GameOverContainer" unique_id=1480585554]
+layout_mode = 2
+alignment = 1
+
+[node name="ExitButton" type="Button" parent="GameOverContainer/ExitBox" unique_id=2095960283]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Exit"
+
 [connection signal="area_entered" from="Triangle" to="Triangle" method="_on_area_entered"]
 [connection signal="timeout" from="Triangle/ShootTimer" to="Triangle" method="_on_shoot_timer_timeout"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="pressed" from="DifficultyContainer/EasyBox/EasyButton" to="." method="_on_easy_button_pressed"]
 [connection signal="pressed" from="DifficultyContainer/MediumBox/MediumButton" to="." method="_on_medium_button_pressed"]
 [connection signal="pressed" from="DifficultyContainer/HardBox/HardButton" to="." method="_on_hard_button_pressed"]
+[connection signal="pressed" from="GameOverContainer/ExitBox/ExitButton" to="." method="_on_exit_button_pressed"]
