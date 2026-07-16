@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c8ipvhp82hema"]
 
-[ext_resource type="Script" uid="uid://76dgoxt02i0i" path="res://Triangle.gd" id="1_vik46"]
-[ext_resource type="Script" uid="uid://c3mid8bsqrj38" path="res://World.gd" id="1_yef18"]
-[ext_resource type="Script" uid="uid://dm8e2m2iipxyi" path="res://Score.gd" id="2_nat7l"]
-[ext_resource type="AudioStream" uid="uid://bewyfaqlei8di" path="res://triangle-defender.wav" id="4_aqk2v"]
+[ext_resource type="Script" uid="uid://c3mid8bsqrj38" path="res://scenes/world/World.gd" id="1_6m72w"]
+[ext_resource type="Script" uid="uid://dm8e2m2iipxyi" path="res://scenes/score/Score.gd" id="2_v5dby"]
+[ext_resource type="Script" uid="uid://76dgoxt02i0i" path="res://scenes/triangle/Triangle.gd" id="3_t5ptc"]
+[ext_resource type="AudioStream" uid="uid://bewyfaqlei8di" path="res://assets/audio/triangle-defender.wav" id="4_bq33v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ty8sl"]
 
@@ -25,7 +25,7 @@ fill_from = Vector2(0.242718, 0.786408)
 
 [node name="World" type="Node2D" unique_id=860740691]
 material = SubResource("ShaderMaterial_ty8sl")
-script = ExtResource("1_yef18")
+script = ExtResource("1_6m72w")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1981396973]
 offset_right = 1152.0
@@ -48,13 +48,13 @@ grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 32
 text = "0"
 text_direction = 2
-script = ExtResource("2_nat7l")
+script = ExtResource("2_v5dby")
 
 [node name="Triangle" type="Area2D" parent="." unique_id=1102859971]
 visible = false
 z_index = 1
 position = Vector2(577, 324)
-script = ExtResource("1_vik46")
+script = ExtResource("3_t5ptc")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Triangle" unique_id=850697636]
 position = Vector2(-21, -10)
@@ -75,7 +75,7 @@ wait_time = 0.5
 [node name="MobTimer" type="Timer" parent="." unique_id=1337054468]
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1412207658]
-stream = ExtResource("4_aqk2v")
+stream = ExtResource("4_bq33v")
 volume_db = 8.889
 
 [node name="DifficultyContainer" type="BoxContainer" parent="." unique_id=2068090250]

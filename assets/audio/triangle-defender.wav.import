@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bewyfaqlei8di"
-path="res://.godot/imported/triangle-defender.wav-db25cb34544ca6ecd7e071d7ddbe0097.sample"
+path="res://.godot/imported/triangle-defender.wav-4c81022533fe3909b383cb5f7ca40338.sample"
 
 [deps]
 
-source_file="res://triangle-defender.wav"
-dest_files=["res://.godot/imported/triangle-defender.wav-db25cb34544ca6ecd7e071d7ddbe0097.sample"]
+source_file="res://assets/audio/triangle-defender.wav"
+dest_files=["res://.godot/imported/triangle-defender.wav-4c81022533fe3909b383cb5f7ca40338.sample"]
 
 [params]
 
