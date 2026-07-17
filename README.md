@@ -2,7 +2,9 @@
 
 ![Triangle Defender gameplay](triangle-defender.jpg)
 
-You are a triangle. Your job is to defend yourself from the oncoming horde of squares. This is TRIANGLE DEFENDER.
+You are a triangle. Your job is to defend yourself from the oncoming horde of squares.
+
+This is **TRIANGLE DEFENDER**.
 
 There are three difficulty levels available to suit different playstyles. In addition, there is an original musical composition included that will hypnotize you into the endless loop of destroying bad guys. Have fun!
 
