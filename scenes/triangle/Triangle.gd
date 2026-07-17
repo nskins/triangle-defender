@@ -2,7 +2,7 @@ extends Area2D
 
 signal game_over
 
-@export var Bullet : PackedScene = load("res://bullet.tscn")
+@export var Bullet : PackedScene = load("res://scenes/bullet/bullet.tscn")
 
 func _process(delta):
 	look_at(get_global_mouse_position())

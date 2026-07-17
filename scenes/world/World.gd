@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var Mob : PackedScene = load("res://mob.tscn")
+@export var Mob : PackedScene = load("res://scenes/mob/mob.tscn")
 
 func _ready():
 	var triangle = get_node("Triangle")
